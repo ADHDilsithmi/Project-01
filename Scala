@@ -1,0 +1,39 @@
+object Assignment01 extends App{
+
+  //Quiz 01 - The temperature is 35C; convert this temperature into Fahrenheit
+
+  val celsius = 35.0
+  val fahrenheit = celsius * 1.8000 + 32.0
+
+  println("35 celsius in fahrenheit is " + fahrenheit)
+
+  //Quiz 02 - The volume of a sphere with radius r is 4/3 Pi r3.What is the volume of a sphere with radius 5?
+
+  val radius = 5
+  val pi = math.Pi
+  val volume = (4.0/3.0) * pi * math.pow(radius,3)
+
+  println("Volume of the sphere is " + volume)
+
+  //Quiz 03 - Suppose the cover price of a book is Rs. 24.95, but bookstores get a 40% discount.Shipping costs Rs.3 for the first 50 copy and 75 cents for each additional copy.What is the total wholesale cost for 60 copies?
+  var coverPrice = 24.95
+  var discount = 0.4
+  var copies = 60
+
+  def totalDiscount() : Double = {
+    coverPrice * copies * discount
+  }
+
+  def shippingCost( Copies : Int) : Double = {
+    if (Copies<=50) 3.0
+    else 3.0 + ((Copies-50)*0.75)
+  }
+
+  def wholesaleCost() : Double = {
+    copies * coverPrice - totalDiscount + shippingCost(copies)
+  }
+
+  println("Total wholesale cost for 60 copies is Rs: " + wholesaleCost())
+
+
+}
